@@ -59,7 +59,9 @@ chmod +x docker_installation.sh
 sudo ./docker_installation.sh
 ```
 
-## Step 3. Run the Docker container in this folder
+## Step 3. Run the Docker container
+
+Copy the `docker-compose.yml` file to any place your want to run the container and type:
 
 ```bash
 docker-compose -f "docker-compose.yml" up -d
