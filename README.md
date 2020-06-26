@@ -1,6 +1,6 @@
 # iTitrate-Docker
 
-iTitrate, developed in [ComputChem LLC](https://www.computchem.com/),  is a software to run the GPU version of the Continuous Constant pH Molecular Dynamics simulations in Amber software. It prepares CpHMD-ready PDB structures from protein crystal structures, stages CpHMD simulations, and generates pK<sub>a</sub> related results. Moreover, it provides a web GUI to control simulation parameters, monitor processes, and visualize results. We have Docker images privately stored on AWS ECR which can run directly if `Docker` and `docker-compose` are installed properly in your local GPU-enabled machines. This repository, GPU-CpHMD-Docker, is for step-by-step instructions on how to use the Docker images.
+iTitrate, developed in [ComputChem LLC](https://www.computchem.com/),  is a software to accurately predict the pK<sub>a</sub>'s of titratable residues by simulating an acid-base titration experiment, i.e., letting a protein adjust its protonation and conformational states to solution pH based on the GPU version of the Continuous Constant pH Molecular Dynamics (CpHMD) simulations in Amber software. It prepares CpHMD-ready PDB structures from protein crystal structures, stages CpHMD simulations, and generates pK<sub>a</sub> related results. Moreover, it provides a web GUI to control simulation parameters, monitor processes, and visualize results. We have Docker images privately stored on Amazon Web Services Elastic Container Registry (AWS ECR) which can run directly if `docker` and `docker-compose` are installed properly in your local machines with Nvidia GPU enabled. This repository, iTitrate-Docker, is for step-by-step instructions on how to use the Docker images.
 
 ## Step 0. Contact us
 
@@ -55,9 +55,9 @@ chmod +x docker_installation.sh
 sudo ./docker_installation.sh
 ```
 
-## Step 2. Create an Amazon Web Services (AWS) account and install `awscli`
+## Step 2. Create an AWS account and install `awscli`
 
-You need to have an [AWS account](https://aws.amazon.com/) since the Docker images are stored in AWS ECR, but you won't be charged if you only use our images. You will be provided AWS access keys from us after you contact us.
+You need to have an [AWS account](https://aws.amazon.com/) since the Docker images are stored in AWS ECR, but you won't be charged if you only use our images. You will be provided AWS access keys after you contact us.
 
 - Install `awscli`
 
