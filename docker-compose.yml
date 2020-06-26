@@ -1,7 +1,7 @@
 version: "3"
 services:
   app:
-    container_name: GPU-CpHMD
+    container_name: iTitrate
     build: .
     image: 696778203502.dkr.ecr.us-east-1.amazonaws.com/gpu-cphmd:latest
     restart: always
