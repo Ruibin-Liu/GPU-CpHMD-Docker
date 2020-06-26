@@ -8,7 +8,7 @@ The Docker images are privately stored and only accessible with our permission. 
 
 ## Step 1. Install [docker](https://www.docker.com/)
 
-- Install docker, docker-compose, and nvidia-docker by pasting the commands bellow on Docker supported [Ubuntu distributions](https://download.docker.com/linux/ubuntu/dists/)
+- Install docker, docker-compose, and nvidia-docker by pasting the commands bellow on Docker supported [Ubuntu distributions](https://download.docker.com/linux/ubuntu/dists/). For other Linux distros, please adjust the commands accordingly.
 
 ```bash
 # For docker and docker-compose
