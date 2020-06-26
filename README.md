@@ -6,9 +6,9 @@ iTitrate, developed in [ComputChem LLC](https://www.computchem.com/),  is a soft
 
 The Docker images are privately stored and only accessible with our permission. If you want to test or use our product, please contact us through our website [contact page](https://www.computchem.com/contact).
 
-## Step 1. Install [Docker](https://www.docker.com/)
+## Step 1. Install [docker](https://www.docker.com/)
 
-- Install docker, docker-compose, and nvidia-docker by pasting the commands bellow on Docker supported [Ubuntu distributions](https://download.docker.com/linux/ubuntu/dists/).
+- Install docker, docker-compose, and nvidia-docker by pasting the commands bellow on Docker supported [Ubuntu distributions](https://download.docker.com/linux/ubuntu/dists/)
 
 ```bash
 # For docker and docker-compose
@@ -28,7 +28,7 @@ sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit nvidia-d
 sudo systemctl restart docker
 ```
 
-- Change the content in /etc/docker/daemon.json to:
+- Change the content in /etc/docker/daemon.json to
 
 ```json
 {
@@ -42,7 +42,7 @@ sudo systemctl restart docker
 }
 ```
 
-- Restart docker,
+- Restart docker
 
 ```bash
 sudo pkill -SIGHUP dockerd
@@ -59,7 +59,7 @@ sudo ./docker_installation.sh
 
 You need to have an [AWS account](https://aws.amazon.com/) since the Docker images are stored in AWS ECR, but you won't be charged if you only use our images. You will be provided AWS access keys from us after you contact us.
 
-- Install `awscli`:
+- Install `awscli`
 
 ```bash
 sudo apt update
