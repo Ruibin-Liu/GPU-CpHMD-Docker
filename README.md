@@ -1,16 +1,16 @@
 # GPU-CpHMD-Docker
 
-GPU-CpHMD, developed in [ComputChem LLC](https://www.computchem.com/),  is a set of tools to support the GPU version of the Continuous Constant pH Molecular Dynamics simulations in Amber software. It prepares CpHMD-ready PDB structures from protein crystal structures, stages CpHMD simulations, and generates pK<sub>a</sub> related results. Moreover, it provides a web GUI to control simulation parameters, monitor processes, and visualize results. We have Docker images privately stored on AWS ECR which can run directly if `Docker` and `docker-compose` are installed properly in your local GPU-enabled machines. This repository, GPU-CpHMD-Docker, is for step-by-step instructions on how to use the Docker images.
+GPU-CpHMD, developed in [ComputChem LLC](https://www.computchem.com/),  is a software to run the GPU version of the Continuous Constant pH Molecular Dynamics simulations in Amber software. It prepares CpHMD-ready PDB structures from protein crystal structures, stages CpHMD simulations, and generates pK<sub>a</sub> related results. Moreover, it provides a web GUI to control simulation parameters, monitor processes, and visualize results. We have Docker images privately stored on AWS ECR which can run directly if `Docker` and `docker-compose` are installed properly in your local GPU-enabled machines. This repository, GPU-CpHMD-Docker, is for step-by-step instructions on how to use the Docker images.
 
-## 0. Contact us
+## Step 0. Contact us
 
 The Docker images are privately stored and only accessible with our permission. If you want to test or use our product, please contact us through our website [contact page](https://www.computchem.com/contact).
 
-## 1. Create an Amazon Web Services (AWS) account
+## Step 1. Create an Amazon Web Services (AWS) account
 
 Create an [AWS account](https://aws.amazon.com/) even if you may have an Amazon account.
 
-## 2. Install [Docker](https://www.docker.com/) properly
+## Step 2. Install [Docker](https://www.docker.com/) properly
 
 Install docker, docker-compose, nvidia-docker by pasting the commands bellow on Docker supported [Ubuntu distributions](https://download.docker.com/linux/ubuntu/dists/).
 
@@ -59,7 +59,7 @@ chmod +x docker_installation.sh
 sudo ./docker_installation.sh
 ```
 
-## 3. Run the Docker container in this folder
+## Step 3. Run the Docker container in this folder
 
 ```bash
 docker-compose -f "docker-compose.yml" up -d
