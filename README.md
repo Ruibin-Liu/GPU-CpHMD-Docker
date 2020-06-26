@@ -6,13 +6,9 @@ iTitrate, developed in [ComputChem LLC](https://www.computchem.com/),  is a soft
 
 The Docker images are privately stored and only accessible with our permission. If you want to test or use our product, please contact us through our website [contact page](https://www.computchem.com/contact).
 
-## Step 1. Create an Amazon Web Services (AWS) account
+## Step 1. Install [Docker](https://www.docker.com/)
 
-You need to have an [AWS account](https://aws.amazon.com/) since the Docker images are stored in AWS ECR, but you won't be charged only by using our images.
-
-## Step 2. Install [Docker](https://www.docker.com/)
-
-Install docker, docker-compose, nvidia-docker by pasting the commands bellow on Docker supported [Ubuntu distributions](https://download.docker.com/linux/ubuntu/dists/).
+- Install docker, docker-compose, and nvidia-docker by pasting the commands bellow on Docker supported [Ubuntu distributions](https://download.docker.com/linux/ubuntu/dists/).
 
 ```bash
 # For docker and docker-compose
@@ -32,7 +28,7 @@ sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit nvidia-d
 sudo systemctl restart docker
 ```
 
-Change the content in /etc/docker/daemon.json as below:
+- Change the content in /etc/docker/daemon.json to:
 
 ```json
 {
@@ -46,17 +42,40 @@ Change the content in /etc/docker/daemon.json as below:
 }
 ```
 
-And lastly,
+- Restart docker,
 
 ```bash
 sudo pkill -SIGHUP dockerd
 ```
 
-You can also download this repository and under this directory:
+For the above steps, you can also download this repository and under the repository directory, execute:
 
 ```bash
 chmod +x docker_installation.sh
 sudo ./docker_installation.sh
+```
+
+## Step 2. Create an Amazon Web Services (AWS) account and install `awscli`
+
+You need to have an [AWS account](https://aws.amazon.com/) since the Docker images are stored in AWS ECR, but you won't be charged if you only use our images. You will be provided AWS access keys from us after you contact us.
+
+- Install `awscli`:
+
+```bash
+sudo apt update
+sudo apt install awscli
+```
+
+- Configure `awscli` and use the provided AWS access keys after prompt
+
+```bash
+aws configure
+```
+
+- Docker login to AWS ECR
+
+```bash
+aws ecr get-login --no-include-email --region us-east-1 | sh
 ```
 
 ## Step 3. Run the Docker container
