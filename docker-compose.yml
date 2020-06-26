@@ -1,0 +1,19 @@
+version: "3"
+services:
+  app:
+    container_name: GPU-CpHMD
+    build: .
+    image: 696778203502.dkr.ecr.us-east-1.amazonaws.com/gpu-cphmd:latest
+    restart: always
+    ports:
+      - "3001:3001"
+    links:
+      - mongo
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=0
+  mongo:
+    container_name: mongo
+    restart: always
+    image: mongo
+    ports:
+      - "27017:27017"
