@@ -83,6 +83,7 @@ aws ecr get-login --no-include-email --region us-east-1 | sh
 Copy the `docker-compose.yml` file to any place your want to run the container and type:
 
 ```bash
+export ARCH=turing   # replace 'turing' with 'maxwell' your GPU has architecture before turing
 docker-compose -f "docker-compose.yml" up -d
 ```
 
