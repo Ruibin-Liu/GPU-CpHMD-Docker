@@ -84,6 +84,7 @@ Copy the `docker-compose.yml` file to any place your want to run the container a
 
 ```bash
 export ARCH=turing   # replace 'turing' with 'maxwell' if your GPU has architecture earier than turing
+export NVIDIA_VISIBLE_DEVICES=0  # replace '0' with '1', '2'... if you want to run on the specific GPU device
 docker-compose -f "docker-compose.yml" up -d
 ```
 
