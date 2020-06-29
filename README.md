@@ -8,6 +8,8 @@ The Docker images are privately stored and only accessible with our permission. 
 
 ## Step 1. Install [docker](https://www.docker.com/)
 
+### Required: A decent Nvidia GPU with the newest nvidia driver [installed](https://askubuntu.com/a/1056128)
+
 - Install docker, docker-compose, and nvidia-docker by pasting the commands bellow on Docker supported [Ubuntu distributions](https://download.docker.com/linux/ubuntu/dists/). For other Linux distros, please adjust the commands accordingly.
 
 ```bash
@@ -18,7 +20,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"  # replace 'bionic' with other supported distributions listed on https://download.docker.com/linux/ubuntu/dists/.
 sudo apt update
 sudo apt install docker-ce
-sudo usermod -aG docker $USER  # add user to the docker group
+sudo usermod -aG docker $USER  && newgrp docker # add user to the docker group
 pip install docker-compose
 
 # For nvidia-docker
