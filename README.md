@@ -18,6 +18,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"  # replace 'bionic' with other supported distributions listed on https://download.docker.com/linux/ubuntu/dists/.
 sudo apt update
 sudo apt install docker-ce
+sudo usermod -aG docker $USER  # add user to the docker group
 pip install docker-compose
 
 # For nvidia-docker
