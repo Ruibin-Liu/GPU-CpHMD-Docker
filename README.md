@@ -55,7 +55,7 @@ For the above steps, you can also download this repository and under the reposit
 
 ```bash
 chmod +x docker_installation.sh
-sudo ./docker_installation.sh
+sudo ./docker_installation.sh -y
 ```
 
 ## Step 2. Create an AWS account and install `awscli`
@@ -91,6 +91,6 @@ export NVIDIA_VISIBLE_DEVICES=0  # replace '0' with '1', '2'... if you want to r
 docker-compose -f "docker-compose.yml" up -d
 ```
 
-It could take several minitues to get ready for the first time but a few seconds after. Once the command returns no error, open the browser and type in `localhost:3001` with 'cphmd' as both username and password defaults. The web GUI is straightforward to use but if you have any questions, feel free to contact us.
+It could take several minitues to get ready for the first time but a few seconds after. Once the command returns no error, open the browser and type in `localhost:3000` with 'cphmd' as both username and password defaults. The web GUI is straightforward to use but if you have any questions, feel free to contact us.
 
-*Note: you can change the default port number in the `docker-compose.yml` file by replacing the FIRST 3001 in "3001:3001" to your desired port.
+*Note: you can change the default port number in the `docker-compose.yml` file by replacing the FIRST 3000 in "3000:3000" to your desired port.
