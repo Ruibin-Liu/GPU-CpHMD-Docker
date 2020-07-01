@@ -14,10 +14,10 @@ curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
 curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit nvidia-docker2
 sudo systemctl restart docker
+pip install docker-compose
 
 # change /etc/docker/daemon.json
 sudo cp /etc/docker/daemon.json /etc/docker/backup_daemon.json
 sudo cp sample_daemon.json /etc/docker/daemon.json
 echo 'The original /etc/docker/daemon.json file is backed up as /etc/docker/backup_daemon.json'
 sudo pkill -SIGHUP dockerd
-pip install docker-compose

@@ -13,7 +13,7 @@ The Docker images are privately stored and only accessible with our permission. 
 - Install docker, docker-compose, and nvidia-docker by pasting the commands bellow on Docker supported [Ubuntu distributions](https://download.docker.com/linux/ubuntu/dists/). For other Linux distros, please adjust the commands accordingly.
 
 ```bash
-# For docker and docker-compose
+# For docker
 sudo apt update
 sudo apt install python-pip apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -21,14 +21,14 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt update
 sudo apt install docker-ce
 sudo usermod -aG docker $USER  && newgrp docker # add user to the docker group
-pip install docker-compose
 
-# For nvidia-docker
+# For nvidia-docker and docker-compose
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
 curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit nvidia-docker2
 sudo systemctl restart docker
+pip install docker-compose
 ```
 
 - Change the content in /etc/docker/daemon.json to
@@ -55,7 +55,7 @@ For the above steps, you can also download this repository and under the reposit
 
 ```bash
 chmod +x docker_installation.sh
-sudo ./docker_installation.sh -y
+sudo ./docker_installation.sh
 ```
 
 ## Step 2. Create an AWS account and install `awscli`
