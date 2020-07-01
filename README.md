@@ -8,7 +8,7 @@ The Docker images are privately stored and only accessible with our permission. 
 
 ## Step 1. Install [docker](https://www.docker.com/)
 
-### Required: A decent Nvidia GPU with the newest nvidia driver [installed](https://askubuntu.com/a/1056128)
+### Required: A decent Nvidia GPU with the newest [nvidia driver](https://www.nvidia.com/Download/index.aspx?lang=en-us) and [cuda10.0](https://developer.nvidia.com/cuda-10.0-download-archive) installed; you can also `bash cuda10_install.sh` to install both the driver and cuda 10.0
 
 - Install docker, docker-compose, and nvidia-docker by pasting the commands bellow on Docker supported [Ubuntu distributions](https://download.docker.com/linux/ubuntu/dists/). For other Linux distros, please adjust the commands accordingly.
 
@@ -93,4 +93,6 @@ docker-compose -f "docker-compose.yml" up -d
 
 It could take several minitues to get ready for the first time but a few seconds after. Once the command returns no error, open the browser and type in `localhost:3000` with 'cphmd' as both username and password defaults. The web GUI is straightforward to use but if you have any questions, feel free to contact us.
 
-*Note: you can change the default port number in the `docker-compose.yml` file by replacing the FIRST 3000 in "3000:3000" to your desired port.
+*Note 1: you can change the default port number in the `docker-compose.yml` file by replacing the FIRST 3000 in "3000:3000" to your desired port.
+
+*Note 2: you can use a pre-configured AWS AMI to run the Docker image if you don't have an Nvidia GPU. After lanuching an AWS EC2 GPU instance from the AMI, you can start from `aws configure` and follow the remaining. Use `ARCH=aws` to run.
