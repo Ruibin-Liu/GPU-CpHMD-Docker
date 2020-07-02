@@ -8,7 +8,11 @@ The Docker images are privately stored and only accessible with our permission. 
 
 ## Step 1. Install [docker](https://www.docker.com/)
 
-### Required: A decent Nvidia GPU with the newest [nvidia driver](https://www.nvidia.com/Download/index.aspx?lang=en-us) and [cuda10.0](https://developer.nvidia.com/cuda-10.0-download-archive) installed; you can also `bash cuda10_install.sh` to install both the driver and cuda 10.0
+### Requirements: a recent [nvidia driver](https://www.nvidia.com/Download/index.aspx?lang=en-us) and [cuda10.0](https://developer.nvidia.com/cuda-10.0-download-archive) for your Nvidia GPU
+
+If you have `sudo` permission, you can install both the driver and cuda 10.0 by `sudo bash cuda10_install.sh` in Ubuntu based Linux.
+
+And then,
 
 - Install docker, docker-compose, and nvidia-docker by pasting the commands bellow on Docker supported [Ubuntu distributions](https://download.docker.com/linux/ubuntu/dists/). For other Linux distros, please adjust the commands accordingly.
 
@@ -54,8 +58,7 @@ sudo pkill -SIGHUP dockerd
 For the above steps, you can also download this repository and under the repository directory, execute:
 
 ```bash
-chmod +x docker_installation.sh
-sudo ./docker_installation.sh
+sudo bash docker_installation.sh
 ```
 
 ## Step 2. Create an AWS account and install `awscli`
