@@ -58,9 +58,9 @@ chmod +x docker_installation.sh
 sudo ./docker_installation.sh -y
 ```
 
-## Step 2. Create an AWS account and install `awscli`
+## Step 2. Install `awscli` and configure
 
-You need to have an [AWS account](https://aws.amazon.com/) since the Docker images are stored in AWS ECR, but you won't be charged if you only use our images. You will be provided AWS access keys after you contact us.
+The Docker images are stored in AWS ECR. The `awscli` tool is to access those images through command line. 
 
 - Install `awscli`
 
