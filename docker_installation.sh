@@ -21,4 +21,4 @@ sudo cp sample_daemon.json /etc/docker/daemon.json
 echo 'The original /etc/docker/daemon.json file is backed up as /etc/docker/backup_daemon.json'
 
 # add user to the docker group
-sudo usermod -aG docker $USER  && newgrp - 
+sudo usermod -aG docker $(whoami)  && newgrp docker
