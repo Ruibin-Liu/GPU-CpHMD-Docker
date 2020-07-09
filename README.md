@@ -6,60 +6,28 @@ iTitrate, developed by [ComputChem LLC](https://www.computchem.com/), is softwar
 
 The Docker images are privately stored and only accessible with our permission. If you want to test or use our product, please contact us through our website [contact page](https://www.computchem.com/contact).
 
-## Step 1. Install [docker](https://www.docker.com/)
+## Step 1. Launch LambdaLabs Instance
 
-### Requirements: a recent [nvidia driver](https://www.nvidia.com/Download/index.aspx?lang=en-us) and [cuda10.0](https://developer.nvidia.com/cuda-10.0-download-archive) for your Nvidia GPU
+### Requirements: LambdaLabs account. 
+### If you don't already have one create one here: [Create Lambda Account](https://lambdalabs.com/cloud/entrance)
 
-If you have `sudo` permission, you can install both the driver and cuda 10.0 by `sudo bash cuda10_install.sh` in Ubuntu based Linux.
+### Link your SSH key and launch the 4x instance
+![Launch Instance](/README_IMAGES/Launch_Instance.png)
 
-And then,
+### To connect to the instance simply copy paste the line under SSH Login into a terminal
+![SSH](/README_IMAGES/SSH.png)
 
-- Install docker, docker-compose, and nvidia-docker by pasting the commands bellow on Docker supported [Ubuntu distributions](https://download.docker.com/linux/ubuntu/dists/). For other Linux distros, please adjust the commands accordingly.
+## Note: The rest of the steps are done on the launched instance, not your local computer
 
-```bash
-# For docker
-sudo apt update
-sudo apt install python-pip apt-transport-https ca-certificates curl software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"  # replace 'bionic' with other supported distributions listed on https://download.docker.com/linux/ubuntu/dists/.
-sudo apt update
-sudo apt install docker-ce
-sudo usermod -aG docker $USER  && newgrp docker # add user to the docker group
 
-# For nvidia-docker and docker-compose
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
-curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
-curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit nvidia-docker2
-sudo systemctl restart docker
-pip install docker-compose
-```
 
-- Change the content in /etc/docker/daemon.json to
+  Install docker, docker-compose, and nvidia-docker by running the script provided in this repository. 
+  
+  1.) ```git clone https://github.com/Ruibin-Liu/iTitrate-Docker.git ```
 
-```json
-{
-    "default-runtime": "nvidia",
-    "runtimes": {
-        "nvidia": {
-            "path": "nvidia-container-runtime",
-            "runtimeArgs": []
-        }
-    }
-}
-```
-
-- Restart docker
-
-```bash
-sudo pkill -SIGHUP dockerd
-```
-
-For the above steps, you can also download this repository and under the repository directory, execute:
-
-```bash
-sudo bash docker_installation.sh
-```
+  2.) ```cd iTitrate-Docker```
+  
+  3.) ```sudo bash lambda_1080ti_preparation.sh```
 
 ## Step 2. Install `awscli` and configure
 
@@ -78,7 +46,7 @@ pip install awscli
 aws configure
 ```
 
-- Docker login to AWS ECR
+- Sync the credentials with docker to get access to our images
 
 ```bash
 aws ecr get-login --no-include-email --region us-east-1 | sh
@@ -86,15 +54,15 @@ aws ecr get-login --no-include-email --region us-east-1 | sh
 
 ## Step 3. Run the Docker container
 
-Copy the `docker-compose.yml` file to any place your want to run the container and type:
-
 ```bash
-export ARCH=turing   # replace 'turing' with 'maxwell' if your GPU has architecture earier than turing
-export NVIDIA_VISIBLE_DEVICES=0  # replace '0' with '1', '2'... if you want to run on the specific GPU device
-docker-compose -f "docker-compose.yml" up -d
+export ARCH=lambda
+export NVIDIA_VISIBLE_DEVICES=all
+docker-compose up -d
 ```
+![SSH](/README_IMAGES/done.png)
 
-It could take several minitues to get ready for the first time but a few seconds after. Once the command returns no error, open the browser and type in `localhost:3000` with 'cphmd' as both username and password defaults. The web GUI is straightforward to use but if you have any questions, feel free to contact us.
+
+The setup of the instance might take several minutes, but relaunching it in the future will only take a couple seconds. Once launched, visit `localhost:3000` with `cphmd` as both username and password. The web GUI is straightforward to use, but if you have any questions, feel free to contact us.  
 
 *Note 1: you can change the default port number in the `docker-compose.yml` file by replacing the FIRST 3000 in "3000:3000" to your desired port.
 
