@@ -27,7 +27,7 @@ The Docker images are privately stored and only accessible with our permission. 
 
   2.) ```cd iTitrate-Docker```
   
-  3.) ```sudo bash lambda_1080ti_preparation.sh```
+  3.) ```sudo bash docker_installation.sh```
 
 ## Step 2. Configure `awscli`
 
