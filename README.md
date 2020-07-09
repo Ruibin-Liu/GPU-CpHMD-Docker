@@ -69,7 +69,7 @@ The Docker images are stored in AWS ECR. The `awscli` tool is to access those im
 
 ```bash
 sudo apt update
-sudo apt install awscli
+pip install awscli
 ```
 
 - Configure `awscli` and use the provided AWS access keys after prompt
