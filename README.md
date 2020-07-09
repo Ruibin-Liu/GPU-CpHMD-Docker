@@ -29,16 +29,9 @@ The Docker images are privately stored and only accessible with our permission. 
   
   3.) ```sudo bash lambda_1080ti_preparation.sh```
 
-## Step 2. Install `awscli` and configure
+## Step 2. Configure `awscli`
 
 The Docker images are stored in AWS ECR. The `awscli` tool is to access those images through command line. 
-
-- Install `awscli`
-
-```bash
-sudo apt update
-pip install awscli
-```
 
 - Configure `awscli` and use the provided AWS access keys after prompt
 
