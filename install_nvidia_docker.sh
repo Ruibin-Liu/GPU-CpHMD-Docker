@@ -13,15 +13,7 @@ ExecStart=/usr/bin/dockerd --host=fd:// --add-runtime=nvidia=/usr/bin/nvidia-con
 EOF
 sudo systemctl daemon-reload
 sudo systemctl restart docker
-sudo tee /etc/docker/daemon.json <<EOF
-{
-    "runtimes": {
-        "nvidia": {
-            "path": "/usr/bin/nvidia-container-runtime",
-            "runtimeArgs": []
-        }
-    }
-}
-EOF
+sudo cp sample_daemon.json /etc/docker/daemon.json 
 sudo pkill -SIGHUP dockerd
-echo "Nvidia-docker installed"
+echo "Nvidia-docker installed!"
+sudo -H pip install awscli docker-compose
