@@ -8,22 +8,23 @@ The Docker images are privately stored and only accessible with our permission. 
 
 ## Step 1. Launch LambdaLabs Instance
 
-### Requirements: LambdaLabs account. 
+### Requirements: LambdaLabs account
+
 ### If you don't already have one create one here: [Create Lambda Account](https://lambdalabs.com/cloud/entrance)
 
 ### Link your SSH key and launch the 4x instance
+
 ![Launch Instance](/README_IMAGES/Launch_Instance.png)
 
 ### To connect to the instance simply copy paste the line under SSH Login into a terminal
+
 ![SSH](/README_IMAGES/SSH.png)
 
 ## Note: The rest of the steps are done on the launched instance, not your local computer
 
-
-
-  Install docker, docker-compose, and nvidia-docker by running the script provided in this repository. 
+  Install docker, docker-compose, and nvidia-docker by running the script provided in this repository.
   
-  1.) ```git clone https://github.com/Ruibin-Liu/iTitrate-Docker.git ```
+  1.) ```git clone https://github.com/Ruibin-Liu/iTitrate-Docker.git```
 
   2.) ```cd iTitrate-Docker```
   
@@ -31,7 +32,7 @@ The Docker images are privately stored and only accessible with our permission. 
 
 ## Step 2. Configure `awscli`
 
-The Docker images are stored in AWS ECR. The `awscli` tool is to access those images through command line. 
+The Docker images are stored in AWS ECR. The `awscli` tool is to access those images through command line.
 
 - Configure `awscli` and use the provided AWS access keys after prompt
 
@@ -53,8 +54,8 @@ export ARCH=lambda
 export NVIDIA_VISIBLE_DEVICES=all
 docker-compose up -d
 ```
-![SSH](/README_IMAGES/done.png)
 
+![SSH](/README_IMAGES/done.png)
 
 The setup of the instance might take several minutes, but relaunching it in the future will only take a couple seconds. Once launched, visit `localhost:3000` with `cphmd` as both username and password. The web GUI is straightforward to use, but if you have any questions, feel free to contact us.  
 
