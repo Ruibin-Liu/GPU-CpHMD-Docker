@@ -22,10 +22,10 @@ The Docker images are privately stored and only accessible with our permission. 
 
 ## Note: The rest of the steps are done on the launched instance, not your local computer
 
-  Install docker, docker-compose, and nvidia-docker by running the script provided in this repository.
+Install docker, docker-compose, and nvidia-docker by running the script provided in this repository.
   
-  ```git clone https://github.com/Ruibin-Liu/iTitrate-Docker.git && cd iTitrate-Docker && bash docker_installation.sh```
-  ```sudo systemctl restart docker```
+    ```git clone https://github.com/Ruibin-Liu/iTitrate-Docker.git && cd iTitrate-Docker && bash docker_installation.sh```
+    ```sudo systemctl restart docker```
 
 ## Step 2. Configure `awscli`
 
@@ -33,15 +33,15 @@ The Docker images are stored in AWS ECR. The `awscli` tool is to access those im
 
 - Configure `awscli` and use the provided AWS access keys after prompt
 
-```aws configure```
+  ```aws configure```
 
 - Sync the credentials with docker to get access to our images
 
-```aws ecr get-login --no-include-email --region us-east-1 | sh```
+  ```aws ecr get-login --no-include-email --region us-east-1 | sh```
 
 ## Step 3. Run the Docker container
 
-```export ARCH=lambda && export NVIDIA_VISIBLE_DEVICES=all && docker-compose up -d```
+  ```export ARCH=lambda && export NVIDIA_VISIBLE_DEVICES=all && docker-compose up -d```
 
 ![SSH](/README_IMAGES/done.png)
 
