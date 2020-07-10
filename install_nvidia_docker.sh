@@ -17,3 +17,6 @@ sudo cp sample_daemon.json /etc/docker/daemon.json
 sudo pkill -SIGHUP dockerd
 echo "Nvidia-docker installed!"
 sudo -H pip install awscli docker-compose
+echo "Now configure aws. After putting in the access keys, type aws ecr get-login --no-include-email --region us-east-1 | sh
+"
+aws configure
