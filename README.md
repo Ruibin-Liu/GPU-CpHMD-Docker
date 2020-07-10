@@ -4,7 +4,7 @@ iTitrate, developed by [ComputChem LLC](https://www.computchem.com/), is softwar
 
 ## Step 0. Contact us
 
-The Docker images are privately stored and only accessible with our permission. If you want to test or use our product, please contact us through our website [contact page](https://www.computchem.com/contact).
+The Docker images are privately stored and only accessible with our permission. If you want to test or use our product, please contact us through our website [contact page](https://www.computchem.com/contact) or email support@computchem.com directly.
 
 ## Step 1. Launch LambdaLabs Instance
 
