@@ -36,6 +36,7 @@ The Docker images are stored in AWS ECR. The `awscli` tool is to access those im
 - Configure `awscli` and use the provided AWS access keys after prompt
 
 ```bash
+sudo systemctl restart docker
 aws configure
 ```
 
