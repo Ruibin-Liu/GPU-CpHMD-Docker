@@ -27,14 +27,14 @@ The Docker images are privately stored and only accessible with our permission. 
 ## Note: The rest of the steps are done on the launched instance, not your local computer
 
 Install docker, docker-compose, and nvidia-docker by running the script provided in this repository.
-  
-  ```git clone https://github.com/Ruibin-Liu/iTitrate-Docker.git && cd iTitrate-Docker && bash update_driver.sh```
 
-  After reboot,
-  
-  ```cd iTitrate-Docker && bash docker_installation.sh```
+  ```git clone https://github.com/Ruibin-Liu/iTitrate-Docker.git && /bin/bash iTitrate-Docker/docker_installation.sh```
 
-  ```sudo systemctl restart docker```
+It can take several minutes to finish the installation. After that,
+
+  ```sudo reboot```
+
+Login the instance again using SSH client or the web terminal.
 
 ## Step 2. Configure `awscli`
 
