@@ -34,7 +34,7 @@ sudo systemctl restart docker
 
 # change /etc/docker/daemon.json
 sudo cp /etc/docker/daemon.json /etc/docker/backup_daemon.json
-sudo cp sample_daemon.json /etc/docker/daemon.json
+sudo cp $iTitrate_docker/sample_daemon.json /etc/docker/daemon.json
 echo 'The original /etc/docker/daemon.json file is backed up as /etc/docker/backup_daemon.json'
 sudo pkill -SIGHUP dockerd
 
