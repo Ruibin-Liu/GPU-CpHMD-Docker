@@ -9,7 +9,8 @@ services:
     links:
       - mongo
     environment:
-      - NVIDIA_VISIBLE_DEVICES=${NVIDIA_VISIBLE_DEVICES} 
+      - NVIDIA_VISIBLE_DEVICES=${NVIDIA_VISIBLE_DEVICES}
+      - NUM_NVIDIA_DEVICES=${NUM_NVIDIA_DEVICES}
   mongo:
     container_name: mongo
     restart: always
