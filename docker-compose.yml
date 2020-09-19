@@ -5,7 +5,7 @@ services:
     image: 696778203502.dkr.ecr.us-east-1.amazonaws.com/ititrate:${ARCH}
     restart: always
     ports:
-      - "3000:3000"
+      - "${PORT}:3000"
     links:
       - mongo
     environment:
