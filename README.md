@@ -50,7 +50,9 @@ The Docker images are stored in AWS ECR. The `awscli` tool is to access those im
 
 ## Step 3. Run the Docker container
 
-  ```export ARCH=turing && export NVIDIA_VISIBLE_DEVICES=all && docker-compose up -d```
+Example:
+
+  ```export ARCH=turing && export NVIDIA_VISIBLE_DEVICES=0,1 && export NUM_NVIDIA_DEVICES=2 && docker-compose up -d```
 
 ![SSH](/README_IMAGES/done.png)
 
